@@ -10,4 +10,5 @@ import word.labradors.android.droid.support.SupportApp;
  */
 
 public class DroidApp extends SupportApp {
+
 }
