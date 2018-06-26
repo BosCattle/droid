@@ -3,54 +3,55 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.labradors'
 
 android {
-    compileSdkVersion 27
-    defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
-        buildConfigField("String", "BASE_URL", "\"http://47.97.101.197:8088/elevator/elevator/v1/\"")
+  compileSdkVersion 27
+  defaultConfig {
+    minSdkVersion 19
+    targetSdkVersion 27
+    versionCode 1
+    versionName "1.0"
+    buildConfigField("String", "BASE_URL", "\"http://47.97.101.197:8088/elevator/elevator/v1/\"")
+  }
+  buildTypes {
+    release {
+      postprocessing {
+        removeUnusedCode false
+        removeUnusedResources false
+        obfuscate false
+        optimizeCode false
+        proguardFile 'proguard-rules.pro'
+      }
     }
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
-    }
-    buildToolsVersion '27.0.3'
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+  }
+  buildToolsVersion '27.0.3'
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  lintOptions {
+    abortOnError false
+  }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.android.support:support-annotations:27.1.1'
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:cardview-v7:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.google.guava:guava:23.5-android'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.15'
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    implementation 'com.squareup.okio:okio:1.14.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-jackson:2.3.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    implementation 'com.jakewharton.timber:timber:4.6.0'
-    implementation 'com.qianwen:update-app:3.5.2'
-    implementation 'com.google.zxing:core:3.3.0'
-    compile 'com.github.chrisbanes:PhotoView:2.0.0'
-    compile 'zlc.season:rxdownload3:1.2.4'
-    compile 'org.greenrobot:eventbus:3.1.1'
-
+  api fileTree(include: ['*.jar'], dir: 'libs')
+  api 'com.android.support:appcompat-v7:27.1.1'
+  api 'com.android.support:support-v4:27.1.1'
+  api 'com.android.support:support-annotations:27.1.1'
+  api 'com.android.support:design:27.1.1'
+  api 'com.android.support:cardview-v7:27.1.1'
+  api 'com.google.guava:guava:23.5-android'
+  api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+  api 'io.reactivex.rxjava2:rxjava:2.1.15'
+  api 'com.squareup.okhttp3:okhttp:3.10.0'
+  api 'com.squareup.okio:okio:1.14.0'
+  api 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+  api 'com.squareup.retrofit2:retrofit:2.4.0'
+  api 'com.squareup.retrofit2:converter-jackson:2.3.0'
+  api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+  api 'com.jakewharton.timber:timber:4.6.0'
+  api 'com.qianwen:update-app:3.5.2'
+  api 'com.google.zxing:core:3.3.0'
+  api 'com.github.chrisbanes:PhotoView:2.0.0'
+  api 'zlc.season:rxdownload3:1.2.4'
+  api 'org.greenrobot:eventbus:3.1.1'
 }

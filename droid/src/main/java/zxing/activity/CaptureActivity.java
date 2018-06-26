@@ -31,18 +31,18 @@ import com.google.zxing.DecodeHintType;
 import com.google.zxing.FormatException;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
-import com.google.zxing.camera.CameraManager;
 import com.google.zxing.common.HybridBinarizer;
-import com.google.zxing.decoding.CaptureActivityHandler;
-import com.google.zxing.decoding.InactivityTimer;
-import com.google.zxing.decoding.RGBLuminanceSource;
 import com.google.zxing.qrcode.QRCodeReader;
-import com.google.zxing.view.ViewfinderView;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Objects;
 import java.util.Vector;
-import work.labradors.droid.R;
+import word.labradors.android.droid.R;
+import zxing.camera.CameraManager;
+import zxing.decoding.CaptureActivityHandler;
+import zxing.decoding.InactivityTimer;
+import zxing.decoding.RGBLuminanceSource;
+import zxing.view.ViewfinderView;
 
 /**
  * Initial the camera

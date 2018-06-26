@@ -16,6 +16,7 @@
 
 package zxing.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -32,10 +33,10 @@ import android.graphics.SweepGradient;
 import android.util.AttributeSet;
 import android.view.View;
 import com.google.zxing.ResultPoint;
-import com.google.zxing.camera.CameraManager;
 import java.util.Collection;
 import java.util.HashSet;
-import work.labradors.droid.R;
+import word.labradors.android.droid.R;
+import zxing.camera.CameraManager;
 
 /**
  * This view is overlaid on top of the camera preview. It adds the viewfinder rectangle and partial
@@ -82,7 +83,7 @@ public final class ViewfinderView extends View {
     super(context, attrs);
 
     //初始化自定义属性信息
-    TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ViewfinderView);
+    @SuppressLint("Recycle") TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ViewfinderView);
     laserColor = array.getColor(R.styleable.ViewfinderView_laser_color, 0x00FF00);
     cornerColor = array.getColor(R.styleable.ViewfinderView_corner_color, 0x00FF00);
     frameColor = array.getColor(R.styleable.ViewfinderView_frame_color, 0xFFFFFF);

@@ -26,12 +26,12 @@ import com.google.zxing.DecodeHintType;
 import com.google.zxing.MultiFormatReader;
 import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
-import com.google.zxing.activity.CaptureActivity;
-import com.google.zxing.camera.CameraManager;
-import com.google.zxing.camera.PlanarYUVLuminanceSource;
+
 import com.google.zxing.common.HybridBinarizer;
 import java.util.Hashtable;
-import work.labradors.droid.R;
+import word.labradors.android.droid.R;
+import zxing.activity.CaptureActivity;
+import zxing.camera.CameraManager;
 
 final class DecodeHandler extends Handler {
 
@@ -77,7 +77,8 @@ final class DecodeHandler extends Handler {
     width = height;
     height = tmp;
     
-    PlanarYUVLuminanceSource source = CameraManager.get().buildLuminanceSource(rotatedData, width, height);
+    zxing.camera.PlanarYUVLuminanceSource
+        source = CameraManager.get().buildLuminanceSource(rotatedData, width, height);
     BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
     try {
       rawResult = multiFormatReader.decodeWithState(bitmap);

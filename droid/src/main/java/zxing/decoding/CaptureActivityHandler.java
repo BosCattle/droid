@@ -26,11 +26,11 @@ import android.os.Message;
 import android.util.Log;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
-import com.google.zxing.activity.CaptureActivity;
-import com.google.zxing.camera.CameraManager;
-import com.google.zxing.view.ViewfinderResultPointCallback;
 import java.util.Vector;
-import work.labradors.droid.R;
+import word.labradors.android.droid.R;
+import zxing.activity.CaptureActivity;
+import zxing.camera.CameraManager;
+import zxing.view.ViewfinderResultPointCallback;
 
 /**
  * This class handles all the messaging which comprises the state machine for capture.

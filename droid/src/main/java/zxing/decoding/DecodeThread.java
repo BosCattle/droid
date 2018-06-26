@@ -21,10 +21,10 @@ import android.os.Looper;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.ResultPointCallback;
-import com.google.zxing.activity.CaptureActivity;
 import java.util.Hashtable;
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
+import zxing.activity.CaptureActivity;
 
 /**
  * This thread does all the heavy lifting of decoding the images.
