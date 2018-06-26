@@ -143,7 +143,7 @@ public class SupportApp extends Application {
             String auth=appInfo.metaData.getString("LABRADOR_AUTH");
             String appId=appInfo.metaData.getString("LABRADOR_APPID");
             LabradorsApiService.getInstance().createApiService(UpdateApi.class)
-                    .checkUpdate(appId)
+                    .checkUpdate("Bearer "+auth,appId)
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeOn(Schedulers.io())
                     .subscribe(appBean -> {

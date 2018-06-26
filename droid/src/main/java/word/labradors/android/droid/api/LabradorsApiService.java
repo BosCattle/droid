@@ -44,7 +44,6 @@ public class LabradorsApiService {
                 if (sOkHttpClient == null) {
                     OkHttpClient.Builder builder = new OkHttpClient.Builder();
                     builder.connectTimeout(10, TimeUnit.SECONDS);
-                    builder.addInterceptor(new DefaultHeaderInterceptor(buildHeader));
                     HttpLoggingInterceptor httpLoggingInterceptor =
                             new HttpLoggingInterceptor(message -> Timber.i(message));
                     httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
